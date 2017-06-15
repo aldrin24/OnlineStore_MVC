@@ -1,0 +1,35 @@
+﻿@model OnlineStore_MVC.Models.tbl_Categories
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_Categories</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category_ImageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category_ImageName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Category_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

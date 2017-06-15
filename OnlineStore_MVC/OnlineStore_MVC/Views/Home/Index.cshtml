@@ -1,0 +1,28 @@
+﻿@model IEnumerable<OnlineStore_MVC.Models.tbl_ImageCommercialSlider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+
+<head>
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="~/Scripts/Slider.js"></script>
+    @*<script src="~/Scripts/CustomSlider.js"></script>*@
+    <script src="~/Scripts/DropDownMenu.js"></script>
+</head>
+
+<body>
+    <div class="SlideshowImages">
+        @{
+            foreach (var item in Model)
+            {
+                <div><img src="@Url.Content(item.Image_Path)" /></div>
+            }
+        }
+    </div>
+    <hr />
+</body>
+</html>

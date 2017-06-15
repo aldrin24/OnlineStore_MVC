@@ -1,0 +1,59 @@
+﻿@model OnlineStore_MVC.Models.AccountsModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+</head>
+
+<body>
+    <h2>Login</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div>
+                <h5>User name</h5>
+                <br />
+                <div>
+                    @Html.EditorFor(model => model.AccountUserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "User Name Here" } })
+                    @Html.ValidationMessageFor(model => model.AccountUserName)
+                </div>
+            </div>
+
+            <hr />
+
+            <div>
+                <h5>Password</h5>
+                <br />
+                <div>
+                    @Html.EditorFor(model => model.AccountPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password Here" } })
+                    @Html.ValidationMessageFor(model => model.AccountPassword)
+                </div>
+            </div>
+
+            <br />
+            <div>
+                <input class="btnLogIn" type="submit" name="Login" value="Login" />
+            </div>
+
+        </div>
+    }
+    <br />
+    <div>
+        @Html.ActionLink("Back to List", "Index", "Home")
+    </div>
+</body>
+</html>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

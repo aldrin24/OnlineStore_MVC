@@ -1,0 +1,56 @@
+﻿@model OnlineStore_MVC.Models.tbl_ImageCommercialSlider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_ImageCommercialSlider</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Path)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image_Path)" style="height: 50px; width: 100px" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Timer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_Timer)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.Image_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
